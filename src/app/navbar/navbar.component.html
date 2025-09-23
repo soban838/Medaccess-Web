@@ -1,7 +1,4 @@
-<!-- Page Wrapper -->
 <div class="page-wrapper">
-
-  <!-- Top Header Bar -->
   <div class="top-bar">
     <div class="left-info">
       <span>🎉 Celebrating 10 years : <b>2014 – 2024</b></span>
@@ -13,38 +10,84 @@
       <a href="#"></a>
     </div>
   </div>
-
-  <!-- Navbar -->
   <nav class="navbar">
-    <div class="logo">Med<span>Access</span></div>
+    <div class="logo">Md<span>Access</span></div>
     <ul class="nav-links">
-      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
-      <li><a routerLink="/pages" routerLinkActive="active">Pages</a></li>
-      <li><a routerLink="/services" routerLinkActive="active">Services</a></li>
-      <li><a routerLink="/projects" routerLinkActive="active">Projects</a></li>
-      <li><a routerLink="/blog" routerLinkActive="active">Blog</a></li>
+      <li><a routerLink="/">Home</a></li> 
+      <li class="dropdown">
+        <a routerLink="/pages">Pages</a>
+        <ul class="dropdown-menu">
+          <li><a routerLink="/about">About Us</a></li>
+          <li class="dropdown-sub">
+            <a href="#">Career ▸</a>
+            <ul class="dropdown-submenu">
+              <li><a routerLink="/career">Career</a></li>
+              <li><a routerLink="/career/single">Single Career</a></li>
+              <li><a routerLink="/career/apply">Job Apply</a></li>
+            </ul>
+          </li>
+          <li class="dropdown-sub">
+            <a href="#">Shop ▸</a>
+            <ul class="dropdown-submenu">
+              <li><a routerLink="/shop">All Products</a></li>
+              <li><a routerLink="/shop/single">Single Product</a></li>
+              <li><a routerLink="/shop/cart">Cart</a></li>
+            </ul>
+          </li>
+          <li><a routerLink="/testimonials">Testimonials</a></li>
+          <li><a routerLink="/our-team">Our Team</a></li>
+          <li><a routerLink="/team-details">Team Details</a></li>
+          <li><a routerLink="/pricing">Pricing Plan</a></li>
+          <li><a routerLink="/faqs">FAQs</a></li>
+          <li><a routerLink="/gallery">Gallery</a></li>
+          <li><a routerLink="/gallery">404 Error</a></li>
+          <li><a routerLink="/gallery">Landing Page</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a routerLink="/services">Services</a>
+        <ul class="dropdown-menu">
+          <li><a routerLink="/services/web">Our Services</a></li>
+          <li><a routerLink="/services/app">Single Services</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a routerLink="/projects">Projects</a>
+        <ul class="dropdown-menu">
+          <li><a routerLink="/projects/grid">Our Projects1</a></li>
+          <li><a routerLink="/projects/list">Our Projects2</a></li>
+          <li><a routerLink="/projects/details">Our Project3</a></li>
+          <li><a routerLink="/projects/details">Single Project</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a routerLink="/blog">Blog</a>
+        <ul class="dropdown-menu">
+          <li><a routerLink="/blog/grid">Blog One 01</a></li>
+          <li><a routerLink="/blog/list">Blog Two 02</a></li>
+          <li><a routerLink="/blog/details">Single Blog</a></li>
+        </ul>
+      </li>
     </ul>
     <button class="contact-btn">
       Contact Us <span class="arrow">→</span>
     </button>
   </nav>
+<ng-container>
+  <section class="hero-section">
+    <div>
+      <h1>
+        Grasping the Concept of <br />
+        Artificial Intelligence<br />
+        by MdAccess
+      </h1>
 
-<section class="pxl-heading--inner">
-  <h3 class="pxl-item--title style-default highlight-default" data-wow-delay="200ms">
-    <span class="pxl-heading--text no">
-      Grasping the Concept of <br>
-      Artificial Intelligence <br>
-      by Aimo
-    </span>
-  </h3>
- <div class="text-center">
-  <button class="contact-btn">
-    Contact Us <span class="arrow">→</span>
-  </button>
-</div>
+      <button class="contact-btn">
+        Contact Us <span class="arrow">→</span>
+      </button>
+    </div>
+  </section>
+</ng-container>
 
-</section>
-
-
-
+<app-home></app-home>
 </div>
