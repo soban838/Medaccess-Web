@@ -10,84 +10,51 @@
       <a href="#"></a>
     </div>
   </div>
-  <nav class="navbar">
-    <div class="logo">Md<span>Access</span></div>
-    <ul class="nav-links">
-      <li><a routerLink="/">Home</a></li> 
-      <li class="dropdown">
-        <a routerLink="/pages">Pages</a>
-        <ul class="dropdown-menu">
-          <li><a routerLink="/about">About Us</a></li>
-          <li class="dropdown-sub">
-            <a href="#">Career ▸</a>
-            <ul class="dropdown-submenu">
-              <li><a routerLink="/career">Career</a></li>
-              <li><a routerLink="/career/single">Single Career</a></li>
-              <li><a routerLink="/career/apply">Job Apply</a></li>
-            </ul>
-          </li>
-          <li class="dropdown-sub">
-            <a href="#">Shop ▸</a>
-            <ul class="dropdown-submenu">
-              <li><a routerLink="/shop">All Products</a></li>
-              <li><a routerLink="/shop/single">Single Product</a></li>
-              <li><a routerLink="/shop/cart">Cart</a></li>
-            </ul>
-          </li>
-          <li><a routerLink="/testimonials">Testimonials</a></li>
-          <li><a routerLink="/our-team">Our Team</a></li>
-          <li><a routerLink="/team-details">Team Details</a></li>
-          <li><a routerLink="/pricing">Pricing Plan</a></li>
-          <li><a routerLink="/faqs">FAQs</a></li>
-          <li><a routerLink="/gallery">Gallery</a></li>
-          <li><a routerLink="/gallery">404 Error</a></li>
-          <li><a routerLink="/gallery">Landing Page</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a routerLink="/services">Services</a>
-        <ul class="dropdown-menu">
-          <li><a routerLink="/services/web">Our Services</a></li>
-          <li><a routerLink="/services/app">Single Services</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a routerLink="/projects">Projects</a>
-        <ul class="dropdown-menu">
-          <li><a routerLink="/projects/grid">Our Projects1</a></li>
-          <li><a routerLink="/projects/list">Our Projects2</a></li>
-          <li><a routerLink="/projects/details">Our Project3</a></li>
-          <li><a routerLink="/projects/details">Single Project</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a routerLink="/blog">Blog</a>
-        <ul class="dropdown-menu">
-          <li><a routerLink="/blog/grid">Blog One 01</a></li>
-          <li><a routerLink="/blog/list">Blog Two 02</a></li>
-          <li><a routerLink="/blog/details">Single Blog</a></li>
+<nav class="navbar">
+  <div class="logo" routerLink="/home">Med<span>Access</span></div>
+
+  <!-- Hamburger Menu Button -->
+  <button class="menu-toggle" (click)="toggleMenu()">
+    <span [class.open]="menuOpen">☰</span>
+  </button>
+
+<ul class="nav-links" [class.active]="menuOpen">
+  <li><a routerLink="/home">AI in Infertility</a></li>
+
+  <!-- Parent Dropdown -->
+  <li class="dropdown" [class.open]="dropdownOpen">
+    <a (click)="toggleDropdown($event)">AI Infertility Treatments ▾</a>
+
+    <ul class="dropdown-menu" *ngIf="dropdownOpen">
+      <li><a routerLink="/check">Infertility Testing ▸</a></li>
+
+      <!-- Sub Dropdown -->
+      <li class="dropdown-sub" [class.open]="subDropdownOpen">
+        <a (click)="toggleSubDropdown($event)">Infertility Treatments ▸</a>
+
+        <ul class="dropdown-submenu two-col-submenu" *ngIf="subDropdownOpen">
+          <li><a routerLink="/IVF">.Ai-IVF</a></li>
+          <li><a routerLink="/ICSI">.Ai-ICSI</a></li>
+          <li><a routerLink="/IVM">.AI-IVM</a></li>
+          <li><a routerLink="/IUI">.AI-IUI</a></li>
+          <li><a routerLink="/EGG">.AI-Egg Pooling</a></li>
+          <li><a routerLink="/STEMOVERIAN">.AI-Stem Cell Organ Rejuvenation</a></li>
+          <li><a routerLink="/STEMERECTILE">.AI-Stem Cell E.D</a></li>
+          <li><a routerLink="/EGGFREEZING">.AI-Egg Freezing</a></li>
+          <li><a routerLink="/GENDER">.AI-Gender Selection</a></li>
         </ul>
       </li>
     </ul>
-    <button class="contact-btn">
-      Contact Us <span class="arrow">→</span>
-    </button>
-  </nav>
-<ng-container>
-  <section class="hero-section">
-    <div>
-      <h1>
-        Grasping the Concept of <br />
-        Artificial Intelligence<br />
-        by MdAccess
-      </h1>
+  </li>
 
-      <button class="contact-btn">
-        Contact Us <span class="arrow">→</span>
-      </button>
-    </div>
-  </section>
-</ng-container>
+  <li><a routerLink="/ISSUES">Infertility Issues</a></li>
+  <li><a routerLink="/aboutus">About Us</a></li>
 
-<app-home></app-home>
+  <li class="login-dropdown">
+    <span (click)="openPatientForm()">Login ▾</span>
+  </li>
+</ul>
+
+</nav>
+
 </div>

@@ -1,0 +1,250 @@
+<div class="page-wrapper">
+    <app-navbar></app-navbar>
+
+
+   <div class="container-fluid hero-section">
+  <div class="row align-items-center">
+    <!-- Right Image Section -->
+    <div class="hero-image">
+      <img src="assets/img/egg-pooling-New.png" alt="IVF NEW" class="hero-img">
+    </div>
+  </div>
+</div>
+
+
+    <div class="container-fluid ivf-section">
+        <div class="row align-items-center">
+
+            <!-- Left Video Thumbnail -->
+            <div class="col-md-6 ivf-video">
+                <div class="video-wrapper">
+                    <img src="https://img.freepik.com/free-photo/beautiful-woman-looking-through-microscope-lens_23-2149107445.jpg"
+                        alt="IVF Video" class="img-fluid">
+                    <div class="play-btn">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Text -->
+            <div class="col-md-6 ivf-text">
+                <h2>An informed and empowered <br> fertility journey </h2>
+                <p>
+                    For women with low ovarian reserve, advancing age, or unpredictable response to stimulation, AI–Egg
+                    Pooling offers a smarter and more personalized approach.
+                    Our advanced AI algorithms analyze ovarian patterns, hormone data, and stimulation response —
+                    helping clinicians plan each cycle strategically to accumulate high-quality eggs for IVF success.
+
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container-fluid stats-section">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-10">
+                <h2>The AI–Egg Pooling™ platform provides data-driven insights that optimize stimulation cycles, improve
+                    oocyte quality, and shorten time to pregnancy.
+                </h2>
+            </div>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="row text-center stats-row">
+            <div class="col-md-4 stat-box">
+                <h3>75%</h3>
+                <p>Increase in mature egg yield across <br>multiple pooling cycles</p>
+            </div>
+            <div class="col-md-4 stat-box">
+                <h3>&gt;95%</h3>
+                <p>Accuracy in predicting ovarian response and stimulation needs</p>
+            </div>
+            <div class="col-md-4 stat-box">
+                <h3>&gt;40%</h3>
+                <p>Improvement in overall IVF success rates after AI-guided pooling</p>
+            </div>
+        </div>
+
+        <!-- CTA Box -->
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="cta-box">
+                    <span>Interested in seeing EMA in action?</span>
+                    <a href="#">Request a demo here <span class="arrow">&#8594;</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footnotes -->
+        <div class="row footnotes">
+            <div class="col-lg-12 text-center">
+                <p>
+                    1. Overview performance whitepaper - data on file. <br>
+                    2. “Embryologist versus machine: Measuring efficiency with AI for embryo evaluation”,
+                    Study was presented as an oral presentation by A. Papadopoulou at EFRS conference 2023.<br>
+                    3. Data on file - presenting ESHRE 2024 (Amsterdam, The Netherlands)
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <section class="improve sec_bg" id="improve">
+        <!-- Background Image -->
+        <div class="bg_im">
+            <img src="https://aivf.co/wp-content/uploads/2023/08/improve_bg_n.png" alt="Improve background" />
+        </div>
+
+        <div class="wrap">
+            <div class="video_in">
+                <!-- Left Video Thumbnail -->
+                <div class="video_vid">
+                    <div class="vid_wrap">
+                        <img src="https://aivf.co/wp-content/uploads/2023/08/improve_vid.png"
+                            alt="Improve video thumbnail" />
+                        <!-- Play Button Overlay -->
+                        <a href="https://www.youtube.com/watch?v=zPiqZR8zICs" target="_blank" class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Content -->
+                <div class="video_content">
+                    <h2 class="video_title">Improve patient care with AI</h2>
+                    <p class="video_tx">
+                        Prof. Daniel Seidman, <br />
+                        Next Generation Egg Pooling — Powered by AI & IVF Innovation.
+                        Helping women preserve fertility, optimize outcomes, and move closer to <br> motherhood with
+                        confidence.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="news" id="news">
+        <div class="wrap container">
+            <h2 class="news_title">Recent News &amp; Events</h2>
+
+            <div class="news_items_wrap row">
+                <div class="col-md-4 col-sm-6" *ngFor="let item of newsList">
+                    <div class="news_item">
+                        <div class="news_item_im">
+                            <img [src]="item.image" [alt]="item.title" />
+                        </div>
+                        <div class="news_item_content">
+                            <div class="news_item_date">{{ item.date }}</div>
+                            <h3 class="news_item_title">{{ item.title }}</h3>
+                            <p class="news_item_tx">{{ item.text }}</p>
+                            <a class="news_item_bt" [href]="item.link" target="_blank">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="all_news_bt text-center mt-5">
+                <a href="https://aivf.co/news/" class="btn_all">All News</a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="partners" id="partners">
+        <div class="container">
+            <h2 class="partners-title">
+                Trusted by our partners who revolutionize IVF
+            </h2>
+
+            <div class="partners-logos">
+                <div class="partner">
+                    <img src="https://aivf.co/wp-content/uploads/2023/08/partner_1.png" alt="Partner 1" />
+                </div>
+                <div class="partner">
+                    <img src="https://aivf.co/wp-content/uploads/2023/08/partner_2.png" alt="Partner 2" />
+                </div>
+                <div class="partner">
+                    <img src="https://aivf.co/wp-content/uploads/2023/08/partner_4.png" alt="Partner 4" />
+                </div>
+                <div class="partner">
+                    <img src="https://aivf.co/wp-content/uploads/2023/08/partner_5.png" alt="Partner 5" />
+                </div>
+                <div class="partner">
+                    <img src="https://aivf.co/wp-content/uploads/2023/08/partner_7.png" alt="Partner 7" />
+                </div>
+                <div class="partner">
+                    <img src="https://aivf.co/wp-content/uploads/2023/08/partner_8.png" alt="Partner 8" />
+                </div>
+                <div class="partner">
+                    <img src="https://aivf.co/wp-content/uploads/2023/08/partner_9.png" alt="Partner 9" />
+                </div>
+                <div class="partner">
+                    <img src="https://aivf.co/wp-content/uploads/2023/09/FIVAP-logo-e1696156052806.png"
+                        alt="FIVAP logo" />
+                </div>
+                <div class="partner">
+                    <img src="https://aivf.co/wp-content/uploads/2023/12/Momart-1.png" alt="Momart 2" />
+                </div>
+                <div class="partner">
+                    <img src="https://aivf.co/wp-content/uploads/2023/12/Bridge-Clinic-1-e1703071336953.png"
+                        alt="Bridge Clinic" />
+                </div>
+                <div class="partner">
+                    <img src="https://aivf.co/wp-content/uploads/2023/12/Helios-1-e1703071360729.png" alt="Helios 2" />
+                </div>
+                <div class="partner">
+                    <img src="https://aivf.co/wp-content/uploads/2023/12/Casa-Di-Cura-e1703072737270.png"
+                        alt="Casa Di Cura" />
+                </div>
+                <div class="partner">
+                    <img src="https://aivf.co/wp-content/uploads/2023/12/Antalya.png" alt="Antalya" />
+                </div>
+                   <div class="partner">
+          <img src="https://www.fertismartivf.com/assets/img/logo-fertismart.svg" alt="Antalya" />
+        </div>
+        <div class="partner">
+          <img src="https://aivf.co/wp-content/uploads/2024/01/AIVF-Soft-Black-RGB.png" alt="Antalya" />
+        </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="testimonials sec_bg" id="testimonials">
+        <div class="container">
+            <h2 class="testimonials-title">Customer Testimonials</h2>
+
+            <div class="testimonial-slider">
+                <div class="testimonial-card" *ngFor="let t of testimonials; let i = index"
+                    [class.active]="i === currentIndex">
+                    <div class="testimonial-img">
+                        <img [src]="t.img" [alt]="t.author" />
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">“{{ t.text }}”</p>
+                        <h4 class="testimonial-author" [innerHTML]="t.author"></h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Dots -->
+            <div class="dots">
+                <span *ngFor="let dot of testimonials; let i = index" (click)="goToSlide(i)"
+                    [class.active]="i === currentIndex"></span>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+  

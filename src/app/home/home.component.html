@@ -1,41 +1,266 @@
-<section class="creative-hero">
+<app-navbar></app-navbar>
 
-  <!-- 🔹 Bootstrap Carousel for Cards -->
-  <div class="swiper mySwiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide" *ngFor="let card of cards">
-      <div class="hero-card">
-        <img [src]="card.img" [alt]="card.alt" />
-      </div>
+<div class="page-wrapper">
+
+ <section class="">
+    <div class="hero-ayat text-center">
+      <h3>
+        أَوْ يُزَوِّجُهُمْ ذُكْرَانًا وَإِنَاثًا وَيَجْعَلُ مَنْ يَشَاءُ عَقِيمًا ۚ إِنَّهُ عَلِيمٌ قَدِيرٌ
+      </h3>
+      <h5>
+        یا انہیں بیٹے اور بیٹیاں دونوں ملا دیتا ہے اور جسے چاہتا ہے بانجھ بنا دیتا ہے۔ بے شک وہ علم و قدرت والا ہے۔
+      </h5>
     </div>
-  </div>
 
-  <!-- Controls --> 
-  <div class="swiper-pagination"></div>
+    <div class=" text-center" style="margin-top: -100px;">
+      <h1 class="fw-bold fst-italic">
+        Pakistan's <span style="color: red;">1st</span><br>
+        AI based Fertility Centre <br />
+      </h1>
+      <button class="contact-btn" (click)="openAppointForm()">
+        Book Appointment <span class="arrow">→</span>
+      </button>
+    </div>
+  </section>
+
+
+<div class="gallery-cards">
+  <div class="card" *ngFor="let img of galleryImages; let i = index">
+    <img class="auto-rotate" [src]="img">
+  </div>
 </div>
 
-
-  <!-- 🔹 Hero Content -->
+<div class="curve-bg">
   <div class="hero-content">
-    <h1>
-      We’re <span class="highlight">Creative</span><br />
+    <h1 style="margin-top: 150px;">
+      We’re <span class="highlight">Creative</span><br>
       <span class="highlight">AI Design</span> Studio
     </h1>
     <p>
-      Artificial Intelligence encompasses the creation of computer systems 
+      Artificial Intelligence encompasses the creation of computer systems
       capable of executing tasks usually necessitating human intelligence.
     </p>
-
     <button class="contact-btn">
       Create a free AI video <span class="arrow">→</span>
     </button>
-
-    <!-- 🔹 Trusted Users -->
-    <div class="trusted-users">
-      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User 1">
-      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User 2">
-      <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="User 3">
+    <div class="trusted-users" style="margin-bottom: 120px;">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User 1" />
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User 2" />
+      <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="User 3" />
       <span>Trusted by 10,000+ creators</span>
     </div>
   </div>
+</div>
+
+
+<section style="">
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="services-bg-video">
+    <source src="assets/video/services-bg.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="container">
+    <!-- Title -->
+      <h2 class="text-center" style="margin-top: -70px; margin-bottom: 200px;">Fertility <span class="highlight">Service We Offer</span></h2>
+      
+
+ 
+
+
+
+<div class="services-grid">
+  <div 
+    class="service-image" 
+    *ngFor="let service of topServices"
+    (click)="openService(service)"
+    [style.cursor]="service.route ? 'pointer' : 'default'"
+  >
+    <img [src]="service.icon" alt="service icon">
+  </div>
+</div>
+
+  
+  </div>
 </section>
+
+
+
+<section class="">
+  <div class="container">
+    <!-- <div class="section-header"> -->
+      <h2 class="text-center" style="margin-top: 200px;">Why should you <span class="highlight">IVF?</span></h2>
+    <!-- </div> -->
+
+    <!-- Content Row -->
+    <div class="choose-content">
+      <div class="choose-image">
+        <video src="assets/video/IVF video-1.mp4" autoplay muted loop playsinline
+          style="width:100%; border-radius:15px; object-fit:cover;">
+        </video>
+      </div>
+
+
+      <!-- Text Right -->
+      <div class="choose-text">
+        <h3>We Deliver Quality AI Solutions</h3>
+        <p>
+        Transform your parenthood journey with AI-powered IVF solutions.Artificial Intelligence enhances every stage of IVF — from
+         egg and sperm selection to embryo grading and implantation prediction — bringing precision,
+         personalization, and higher success rates to fertility care.
+        </p>
+        <ul>
+          <li>AI Powered Lab</li>
+          <li>Patient Friendly</li>
+          <li>Higher Success Rates</li>
+          <li>AI-Powered Precision</li>
+          <li>Most Advanced Reproductive Technology</li>         
+          <li>Cost-Effective Fertility Solutions</li>
+
+        </ul>
+        <button class="learn-more-btn">Learn More →</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<br>
+<section class="client-feedback">
+  <div class="container text-center">
+    <h5 class="section-title" style="margin-top:50px;">Patient’s Feedback</h5>
+
+    <div class="feedback-slider">
+      <div
+        *ngFor="let feedback of feedbacks; let i = index"
+        class="feedback-card"
+        [ngClass]="{
+          active: i === selectedTab,
+          prev: i === (selectedTab - 1 + feedbacks.length) % feedbacks.length,
+          next: i === (selectedTab + 1) % feedbacks.length
+        }"
+      >
+        <div class="client-img">
+          <img [src]="feedback.img" [alt]="feedback.name" />
+        </div>
+
+        <h5 class="client-name">{{ feedback.name }}</h5>
+        <h3 class="feedback-title">{{ feedback.title }}</h3>
+        <div class="stars">★★★★★</div>
+        <p class="feedback-text">{{ feedback.text }}</p>
+      </div>
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="feedback-dots">
+      <span
+        *ngFor="let f of feedbacks; let i = index"
+        class="dot"
+        [class.active]="selectedTab === i"
+        (click)="selectedTab = i"
+      ></span>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<div class="">
+  <div class="scroll-track">
+    <p>آپ کا حَمل - ہماری ذِمّہ داری (اِن شاء اللّٰہ)</p>
+    <p>آپ کا حَمل - ہماری ذِمّہ داری (اِن شاء اللّٰہ)</p>
+    <p>آپ کا حَمل - ہماری ذِمّہ داری (اِن شاء اللّٰہ)</p>
+    <p>آپ کا حَمل - ہماری ذِمّہ داری (اِن شاء اللّٰہ)</p>
+    <p>آپ کا حَمل - ہماری ذِمّہ داری (اِن شاء اللّٰہ)</p>
+    <p>آپ کا حَمل - ہماری ذِمّہ داری (اِن شاء اللّٰہ)</p>
+  </div>
+</div>
+
+ 
+
+ 
+
+
+
+<section class="doctors-section">
+  <div class="container">
+      <h2 class="text-center">Meet Our <span class="highlight">Doctors</span></h2>
+
+    <div class="doctors-cards-grid">
+
+
+
+
+
+
+
+      <div class="doctor-card">
+        <div class="doctor-card-inner">
+        <div class="doctor-card-front">
+  <i class="fa-solid fa-user-doctor fa-4x"></i>
+  <h4>Dr. Imran Ayub</h4>
+  <span>𝐔𝐊 𝐁𝐨𝐚𝐫𝐝 𝐂𝐞𝐫𝐭𝐢𝐟𝐢𝐞𝐝 𝐑𝐞𝐩𝐫𝐨𝐝𝐮𝐜𝐭𝐢𝐯𝐞 𝐒𝐮𝐫𝐠𝐞𝐨𝐧</span>
+  <ul class="doctor-specialties">
+    <li>𝐌.𝐒𝐜 𝐈𝐕𝐅 & 𝐀𝐑𝐓 (𝐔𝐧𝐢𝐯𝐞𝐫𝐬𝐢𝐭𝐲 𝐂𝐨𝐥𝐥𝐞𝐠𝐞 𝐋𝐨𝐧𝐝𝐨𝐧)</li>
+    <li>𝐂𝐨𝐮𝐧𝐭𝐞𝐝 𝐚𝐦𝐨𝐧𝐠 𝐭𝐡𝐞 𝐓𝐨𝐩 𝐈𝐧𝐟𝐞𝐫𝐭𝐢𝐥𝐢𝐭𝐲 𝐄𝐱𝐩𝐞𝐫𝐭𝐬 𝐢𝐧 𝐈𝐬𝐭𝐚𝐧𝐛𝐮𝐥 & 𝐁𝐚𝐤𝐮</li>
+    <li>Over 1000 Successful Cases</li>
+  </ul>
+</div>
+
+          <div class="doctor-card-back">
+          
+          </div>
+        </div>
+      </div>
+
+      <!-- Doctor 1 -->
+      <div class="doctor-card">
+        <div class="doctor-card-inner">
+         <div class="doctor-card-front">
+  <i class="fa-solid fa-user-doctor fa-4x"></i>
+  <h4>𝐃𝐑 𝐍𝐀DIA</h4>
+  <span>Fertility Specialist</span>
+  <ul class="doctor-specialties">
+    <li>CONSULTANT GYNAECOLOGIST</li>
+    <li>𝐌𝐁𝐁𝐒, 𝐅𝐂𝐏𝐒</li>
+    <li>Specializes in Female Fertility</li>
+  </ul>
+</div>
+          <div class="doctor-card-back">
+           
+          </div>
+        </div>
+      </div>
+
+      <!-- Doctor 2 -->
+      
+
+      
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="">
+  <div class="container">
+      <h1 class="text-center">FAQ</h1>
+
+    <div class="faq-item" *ngFor="let faq of faqs; let i = index">
+      <div class="faq-question" (click)="toggleFAQ(i)">
+        {{faq.question}}
+        <span class="faq-toggle">{{faq.open ? '-' : '+'}}</span>
+      </div>
+      <div class="faq-answer" [class.open]="faq.open">
+        {{faq.answer}}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</div>
